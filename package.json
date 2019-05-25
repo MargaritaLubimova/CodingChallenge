@@ -1,0 +1,11 @@
+{
+    "scripts": {
+        "update": "node node_modules/protractor/bin/webdriver-manager update",
+        "start": "node node_modules/protractor/bin/webdriver-manager start --seleniumPort 4445",
+        "test": "node -r esm node_modules/protractor/bin/protractor conf.js"
+    },
+    "devDependencies": {
+        "protractor": "^5.4.2",
+        "esm": "^3.2.25"
+    }
+}
