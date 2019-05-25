@@ -1,15 +1,15 @@
 exports.config = {
-    framework: 'jasmine',
-    
-    seleniumAddress: 'http://localhost:4445/wd/hub',
-    
-    specs: ['tests/*.js'],
-    
-    capabilities: {
-      browserName: 'chrome'
-    },
+	framework: 'jasmine',
 
-    jasmineNodeOpts: {
-      showColors: true
-    }
-  }
+	seleniumAddress: 'http://localhost:4445/wd/hub',
+
+	specs: ['tests/*.js'],
+
+	capabilities: {
+		browserName: 'chrome'
+	},
+
+	jasmineNodeOpts: {
+		showColors: true
+	}
+}
