@@ -1,7 +1,11 @@
 import { by, element } from "protractor"
 
 const StartPage = function () {
+	
 	this.url = "https://app.fincompare.de/wizard"
+
+	// #region Locators
+		
 	this.logo = element(by.className("header__logo__image"))
 	this.title = element(by.className("funnel__products__heading"))
 	this.creditBlock = element(by.css("#root > div > div.content > div > a:nth-child(1) > div"))
@@ -12,13 +16,20 @@ const StartPage = function () {
 	this.inventoryBlock = element(by.css("#root > div > div.content > div > a:nth-child(6) > div"))
 	this.saleBlock = element(by.css("#root > div > div.content > div > a:nth-child(6) > div"))
 
+	// #endregion
+
+	// #region Clicks
+		
     /**
 	 * Clicks on credit block.
 	 */
 	this.clickOnCreditBlock = function () {
 		this.creditBlock.click()
 	}
+	// #endregion
 
+	// #region Visibility
+		
     /**
     * @return {Boolean} value of combined visibility of all necessary elements.
     */
@@ -27,6 +38,7 @@ const StartPage = function () {
 			&& this.leasingBlock.isDisplayed() && this.factoringBlock.isDisplayed() && this.purchaseBlock.isDisplayed()
 			&& this.singleFactoringBlock.isDisplayed() && this.inventoryBlock.isDisplayed() && this.saleBlock.isDisplayed())
 	}
+	// #endregion
 }
 
 module.exports = new StartPage()

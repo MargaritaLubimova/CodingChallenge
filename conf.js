@@ -5,6 +5,12 @@ exports.config = {
 
 	specs: ['tests/*.js'],
 
+	onPrepare: function() {
+		browser.waitForAngularEnabled(false)
+		browser.manage().window().maximize()
+		browser.manage().timeouts().implicitlyWait(10000)
+	},
+
 	capabilities: {
 		browserName: 'chrome'
 	},
