@@ -50,7 +50,7 @@ describe('When the Register page is opened', function () {
 		registerPage.fillLastNameField("Last Name")
 		registerPage.fillEmailField("email")
 		registerPage.clickOnBusinessRelationMenu()
-		
+
 		// FIXME: Change the dropdown menu implementation from the input to the select
 		// then delete waitings until dropdown menus will be opened/close
 

@@ -6,13 +6,13 @@ const registerPage = require('../page-objects/register-page')
 const searchPage = require('../page-objects/search-page')
 const companyName = "FinCompare GmbH"
 
-describe('User Cases', function () {
+describe('Registration user case', function () {
 
 	beforeEach(function () {
 		browser.get(startPage.url)
 	})
 
-	it('Verify the Registration User case', function () {
+	it('verify', function () {
 		startPage.clickOnCreditBlock()
 
 		// Waits for a redirect

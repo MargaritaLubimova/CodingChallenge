@@ -1,7 +1,6 @@
-
 const LoginPage = function () {
 
-    this.url = "https://app.fincompare.de/account/login?next=/account/requests"   
+    this.url = "https://app.fincompare.de/account/login?next=/account/requests"
 
 }
 

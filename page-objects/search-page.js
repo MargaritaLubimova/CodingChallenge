@@ -21,8 +21,8 @@ const SearchPage = function () {
 	// #region Visibility
 
 	/**
-    * @return {Promise<Boolean>} value of combined visibility of all necessary elements
-    */
+     * @return {Promise<Boolean>} value of combined visibility of all necessary elements
+     */
 	this.verifyAllElementsAreVisible = function () {
 		return (this.title.isDisplayed() && this.searchField.isDisplayed() && this.searchButton.isDisplayed())
 	}
