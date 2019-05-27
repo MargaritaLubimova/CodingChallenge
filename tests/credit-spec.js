@@ -10,10 +10,6 @@ describe('When the Credit page is opened', function () {
 		browser.get(creditPage.url)
     })
 
-    afterEach(function () {
-        browser.manage().deleteAllCookies()
-    })
-
 	it('Verify that all fields are presented', function () {
 		expect(creditPage.verifyAllElementsAreVisible()).toBe(true)
 	})

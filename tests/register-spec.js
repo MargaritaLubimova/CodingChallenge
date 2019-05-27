@@ -11,10 +11,6 @@ describe('When the Register page is opened', function () {
 		browser.get(registerPage.url)
 	})
 
-	afterEach(function () {
-		browser.manage().deleteAllCookies()
-	})
-
 	it('Verify that all fields are presented', function () {
 		expect(registerPage.verifyAllElementsAreVisible()).toBe(true)
 	})

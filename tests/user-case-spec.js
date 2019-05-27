@@ -12,10 +12,6 @@ describe('User Cases', function () {
 		browser.get(startPage.url)
 	})
 
-	afterEach(function () {
-		browser.manage().deleteAllCookies()
-	})
-
 	it('Verify the Registration User case', function () {
 		startPage.clickOnCreditBlock()
 

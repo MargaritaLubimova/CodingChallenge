@@ -11,10 +11,6 @@ describe('When the Search page is opened', function () {
 		browser.get(searchPage.url)
 	})
 
-	afterEach(function () {
-		browser.manage().deleteAllCookies()
-	})
-
 	it('Verify that all fields are presented', function () {
 		expect(searchPage.verifyAllElementsAreVisible()).toBe(true)
 	})
