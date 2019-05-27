@@ -1,0 +1,37 @@
+<?xml version='1.0'?>
+<ns2:test-suite xmlns:ns2='urn:model.allure.qatools.yandex.ru' start='1558982208112' stop='1558982257903'>
+    <name>When the Credit page is opened</name>
+    <title>When the Credit page is opened</title>
+    <test-cases>
+        <test-case start='1558982208112' status='passed' stop='1558982212867'>
+            <name>Verify that all fields are presented</name>
+            <title>Verify that all fields are presented</title>
+            <labels/>
+            <parameters/>
+            <steps/>
+            <attachments>
+                <attachment title='Screenshot' source='1184ff13-7ab7-4948-842d-05f877348e7b-attachment.png' type='image/png' size='43350'/>
+            </attachments>
+        </test-case>
+        <test-case start='1558982212867' status='passed' stop='1558982217019'>
+            <name>Verify error messages for fields with empty parameters</name>
+            <title>Verify error messages for fields with empty parameters</title>
+            <labels/>
+            <parameters/>
+            <steps/>
+            <attachments>
+                <attachment title='Screenshot' source='b4c42c6a-d0e5-41ec-903f-79855ae72bbb-attachment.png' type='image/png' size='52233'/>
+            </attachments>
+        </test-case>
+        <test-case start='1558982248224' status='passed' stop='1558982257903'>
+            <name>Verify all fields with right parameters</name>
+            <title>Verify all fields with right parameters</title>
+            <labels/>
+            <parameters/>
+            <steps/>
+            <attachments>
+                <attachment title='Screenshot' source='8644a7ef-6821-418e-b6b4-ee9d4a334685-attachment.png' type='image/png' size='55357'/>
+            </attachments>
+        </test-case>
+    </test-cases>
+</ns2:test-suite>
