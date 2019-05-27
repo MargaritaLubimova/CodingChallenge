@@ -1,0 +1,37 @@
+<?xml version='1.0'?>
+<ns2:test-suite xmlns:ns2='urn:model.allure.qatools.yandex.ru' start='1558982257907' stop='1558982277058'>
+    <name>When the Search page is opened</name>
+    <title>When the Search page is opened</title>
+    <test-cases>
+        <test-case start='1558982257907' status='passed' stop='1558982262551'>
+            <name>Verify that all fields are presented</name>
+            <title>Verify that all fields are presented</title>
+            <labels/>
+            <parameters/>
+            <steps/>
+            <attachments>
+                <attachment title='Screenshot' source='8ca6986b-9f51-43a2-8779-640c1ed1a0a9-attachment.png' type='image/png' size='55357'/>
+            </attachments>
+        </test-case>
+        <test-case start='1558982262551' status='passed' stop='1558982268740'>
+            <name>Verify search result for exist company</name>
+            <title>Verify search result for exist company</title>
+            <labels/>
+            <parameters/>
+            <steps/>
+            <attachments>
+                <attachment title='Screenshot' source='81a21f48-ffe9-4ad6-b722-09dbd6585396-attachment.png' type='image/png' size='48972'/>
+            </attachments>
+        </test-case>
+        <test-case start='1558982268740' status='passed' stop='1558982277058'>
+            <name>Verify that the Register page could be opened from found company card</name>
+            <title>Verify that the Register page could be opened from found company card</title>
+            <labels/>
+            <parameters/>
+            <steps/>
+            <attachments>
+                <attachment title='Screenshot' source='18759c57-f01b-4593-81ec-90cf95e30972-attachment.png' type='image/png' size='42348'/>
+            </attachments>
+        </test-case>
+    </test-cases>
+</ns2:test-suite>
