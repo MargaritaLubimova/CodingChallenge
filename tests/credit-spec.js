@@ -9,8 +9,8 @@ describe('When the Credit page is opened', function () {
 	beforeEach(function () {
 		browser.get(creditPage.url)
     })
-    
-    afterEach(function(){
+
+    afterEach(function () {
         browser.manage().deleteAllCookies()
     })
 
@@ -37,14 +37,12 @@ describe('When the Credit page is opened', function () {
             expect(creditPage.verifyErrorMessages()).toEqual(2)
         })
 
-        // This test should be finished with failure, 
-        // because this field shouldn't get a negative number 
-        // and should convert it to a positive number
         it('with short negative number (1 digit)', function () {
             creditPage.fillAmountField("-1")
             browser.sleep(1000)
             creditPage.clickOnSubmitButton()
-            expect(creditPage.getTextAmountField()).toEqual("1")
+            expect(creditPage.getTextAmountField()).toBe("1", "This test should be finished with failure,"
+                + " because this field shouldn't get a negative number and should convert it to a positive number")
         })
 
         it('with symbols', function () {
@@ -74,18 +72,16 @@ describe('When the Credit page is opened', function () {
             creditPage.clickOnSubmitButton()
             expect(creditPage.getTextErrorMesageUnderAmountField()).toEqual("Stelle sicher, dass es insgesamt nicht mehr als 14 Ziffern lang ist.")
         })
-        
-        // This test should be finished with failure,
-        // because this field souldn't remove input value
-        // and put 121 instead of it
+
         it('with boundary number (22 digits)', function () {
             creditPage.fillAmountField("1000000000000000000000")
             creditPage.clickOnSubmitButton()
             
             // We expect error messages under the amount field,
             // under the purpose and the term dropdown menus
-            expect(creditPage.verifyErrorMessages()).toEqual(3)
-        }) 
+            expect(creditPage.verifyErrorMessages()).toBe(3, "This test should be finished with failure,"
+                + " because this field souldn't remove input value and put 121 instead of it")
+        })
     })
 
     it('Verify all fields with right parameters', function () {
