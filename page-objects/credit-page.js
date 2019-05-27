@@ -1,5 +1,7 @@
 import { by, element, ElementArrayFinder, ElementFinder } from "protractor"
 
+const helpers = require('../helpers')
+
 const CreditPage = function () {
 	
 	// #region URLs
@@ -135,14 +137,14 @@ const CreditPage = function () {
   	 * Chooses random value from the purpose dropdown menu
   	 */
 	this.chooseRandomValuePorposeMenu = function () {
-		randomElement(this.allValueForPurposeMenu).then(element => { element.click() })
+		helpers.randomElement(this.allValueForPurposeMenu).then(element => { element.click() })
 	}
 
 	/**
 	 * Chooses random value from the term dropdown menu
 	 */
 	this.chooseRandomValueTermMenu = function () {
-		randomElement(this.allValueForTermMenu).then(element => { element.click() })
+		helpers.randomElement(this.allValueForTermMenu).then(element => { element.click() })
 	}
 	
 	// #endregion
@@ -159,20 +161,6 @@ const CreditPage = function () {
 	}
 
 	// #endregion
-
-	// #region Helpers
-
-	/**
-	 * @param {ElementArrayFinder} input container with elements
-	 * @return {Promise<ElementFinder>} random element from the input container
-	 */
-	function randomElement(input) {
-		return input.count().then(length => {
-			return input.get(Math.floor(Math.random() * (length - 1)))
-		})
-	}
-
-	// #endregion	
 }
 
 module.exports = new CreditPage()
