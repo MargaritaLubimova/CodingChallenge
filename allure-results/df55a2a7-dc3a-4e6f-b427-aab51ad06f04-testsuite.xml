@@ -1,0 +1,103 @@
+<?xml version='1.0'?>
+<ns2:test-suite xmlns:ns2='urn:model.allure.qatools.yandex.ru' start='1558982217019' stop='1558982248218'>
+    <name>When the Credit page is opened Verify the Amount field</name>
+    <title>When the Credit page is opened Verify the Amount field</title>
+    <test-cases>
+        <test-case start='1558982217019' status='passed' stop='1558982221254'>
+            <name>with short number (1 digit)</name>
+            <title>with short number (1 digit)</title>
+            <labels/>
+            <parameters/>
+            <steps/>
+            <attachments>
+                <attachment title='Screenshot' source='ea861b33-d77c-41e2-a21e-470bfe552367-attachment.png' type='image/png' size='49005'/>
+            </attachments>
+        </test-case>
+        <test-case start='1558982221254' status='failed' stop='1558982226326'>
+            <name>with short negative number (1 digit)</name>
+            <title>with short negative number (1 digit)</title>
+            <labels/>
+            <parameters/>
+            <steps/>
+            <attachments>
+                <attachment title='Screenshot' source='a9243205-acdb-40c9-bc31-9b5f58b9ef9e-attachment.png' type='image/png' size='49070'/>
+            </attachments>
+            <failure>
+                <message>Expected '-1' to be '1', 'This test should be finished with failure, because this field shouldn't get a negative number and should convert it to a positive number'.</message>
+                <stack-trace>Error: Failed expectation
+                    at UserContext.&lt;anonymous> (/Users/margo/Desktop/Tests/CodingChallenge/tests/credit-spec.js:44:53)
+                    at /Users/margo/Desktop/Tests/CodingChallenge/node_modules/jasminewd2/index.js:112:25
+                    at new ManagedPromise (/Users/margo/Desktop/Tests/CodingChallenge/node_modules/selenium-webdriver/lib/promise.js:1077:7)
+                    at ControlFlow.promise (/Users/margo/Desktop/Tests/CodingChallenge/node_modules/selenium-webdriver/lib/promise.js:2505:12)
+                    at schedulerExecute (/Users/margo/Desktop/Tests/CodingChallenge/node_modules/jasminewd2/index.js:95:18)
+                    at TaskQueue.execute_ (/Users/margo/Desktop/Tests/CodingChallenge/node_modules/selenium-webdriver/lib/promise.js:3084:14)
+                    at TaskQueue.executeNext_ (/Users/margo/Desktop/Tests/CodingChallenge/node_modules/selenium-webdriver/lib/promise.js:3067:27)
+                    at asyncRun (/Users/margo/Desktop/Tests/CodingChallenge/node_modules/selenium-webdriver/lib/promise.js:2974:25)
+                    at /Users/margo/Desktop/Tests/CodingChallenge/node_modules/selenium-webdriver/lib/promise.js:668:7</stack-trace>
+            </failure>
+        </test-case>
+        <test-case start='1558982226326' status='passed' stop='1558982230413'>
+            <name>with symbols</name>
+            <title>with symbols</title>
+            <labels/>
+            <parameters/>
+            <steps/>
+            <attachments>
+                <attachment title='Screenshot' source='73ba81ca-9e1a-4d3d-aef6-57b4850f8704-attachment.png' type='image/png' size='52233'/>
+            </attachments>
+        </test-case>
+        <test-case start='1558982230413' status='passed' stop='1558982234801'>
+            <name>with number (8 digits)</name>
+            <title>with number (8 digits)</title>
+            <labels/>
+            <parameters/>
+            <steps/>
+            <attachments>
+                <attachment title='Screenshot' source='93b3b331-0b84-4c09-84e6-5bff155de829-attachment.png' type='image/png' size='50388'/>
+            </attachments>
+        </test-case>
+        <test-case start='1558982234801' status='passed' stop='1558982239152'>
+            <name>with boundary number (13 digits)</name>
+            <title>with boundary number (13 digits)</title>
+            <labels/>
+            <parameters/>
+            <steps/>
+            <attachments>
+                <attachment title='Screenshot' source='72763cf3-58b7-41bc-8b00-83863321e561-attachment.png' type='image/png' size='56647'/>
+            </attachments>
+        </test-case>
+        <test-case start='1558982239152' status='passed' stop='1558982243636'>
+            <name>with boundary number (15 digits)</name>
+            <title>with boundary number (15 digits)</title>
+            <labels/>
+            <parameters/>
+            <steps/>
+            <attachments>
+                <attachment title='Screenshot' source='5564f949-3782-4a23-b005-25c6fbfef8d0-attachment.png' type='image/png' size='56331'/>
+            </attachments>
+        </test-case>
+        <test-case start='1558982243636' status='failed' stop='1558982248218'>
+            <name>with boundary number (22 digits)</name>
+            <title>with boundary number (22 digits)</title>
+            <labels/>
+            <parameters/>
+            <steps/>
+            <attachments>
+                <attachment title='Screenshot' source='7c4aa7db-fe76-4bbc-82c1-7c9172d2a5f7-attachment.png' type='image/png' size='49362'/>
+            </attachments>
+            <failure>
+                <message>Expected 2 to be 3, 'This test should be finished with failure, because this field souldn't remove input value and put 121 instead of it'.</message>
+                <stack-trace>Error: Failed expectation
+                    at UserContext.&lt;anonymous> (/Users/margo/Desktop/Tests/CodingChallenge/tests/credit-spec.js:82:54)
+                    at /Users/margo/Desktop/Tests/CodingChallenge/node_modules/jasminewd2/index.js:112:25
+                    at new ManagedPromise (/Users/margo/Desktop/Tests/CodingChallenge/node_modules/selenium-webdriver/lib/promise.js:1077:7)
+                    at ControlFlow.promise (/Users/margo/Desktop/Tests/CodingChallenge/node_modules/selenium-webdriver/lib/promise.js:2505:12)
+                    at schedulerExecute (/Users/margo/Desktop/Tests/CodingChallenge/node_modules/jasminewd2/index.js:95:18)
+                    at TaskQueue.execute_ (/Users/margo/Desktop/Tests/CodingChallenge/node_modules/selenium-webdriver/lib/promise.js:3084:14)
+                    at TaskQueue.executeNext_ (/Users/margo/Desktop/Tests/CodingChallenge/node_modules/selenium-webdriver/lib/promise.js:3067:27)
+                    at asyncRun (/Users/margo/Desktop/Tests/CodingChallenge/node_modules/selenium-webdriver/lib/promise.js:2974:25)
+                    at /Users/margo/Desktop/Tests/CodingChallenge/node_modules/selenium-webdriver/lib/promise.js:668:7</stack-trace>
+            </failure>
+        </test-case>
+    </test-cases>
+</ns2:test-suite>

@@ -1,0 +1,57 @@
+<?xml version='1.0'?>
+<ns2:test-suite xmlns:ns2='urn:model.allure.qatools.yandex.ru' start='1558982277060' stop='1558982330073'>
+    <name>When the Register page is opened</name>
+    <title>When the Register page is opened</title>
+    <test-cases>
+        <test-case start='1558982277060' status='passed' stop='1558982282223'>
+            <name>Verify that all fields are presented</name>
+            <title>Verify that all fields are presented</title>
+            <labels/>
+            <parameters/>
+            <steps/>
+            <attachments>
+                <attachment title='Screenshot' source='7c9e2e8f-81e3-4004-a0a5-400302d8e2d0-attachment.png' type='image/png' size='41974'/>
+            </attachments>
+        </test-case>
+        <test-case start='1558982282223' status='passed' stop='1558982287591'>
+            <name>Verify that the Login page could be opened from the Register page</name>
+            <title>Verify that the Login page could be opened from the Register page</title>
+            <labels/>
+            <parameters/>
+            <steps/>
+            <attachments>
+                <attachment title='Screenshot' source='f8469461-59d0-4449-8121-ac9fe782ad55-attachment.png' type='image/png' size='48809'/>
+            </attachments>
+        </test-case>
+        <test-case start='1558982287591' status='passed' stop='1558982299546'>
+            <name>Verify error messages for fields with empty parameters</name>
+            <title>Verify error messages for fields with empty parameters</title>
+            <labels/>
+            <parameters/>
+            <steps/>
+            <attachments>
+                <attachment title='Screenshot' source='ddbf1781-8543-4dc2-be7d-1d3f656b917b-attachment.png' type='image/png' size='50737'/>
+            </attachments>
+        </test-case>
+        <test-case start='1558982299546' status='passed' stop='1558982314407'>
+            <name>Verify fields with invalid email</name>
+            <title>Verify fields with invalid email</title>
+            <labels/>
+            <parameters/>
+            <steps/>
+            <attachments>
+                <attachment title='Screenshot' source='4e6706d8-20fc-4bd9-8def-d5f819482f7a-attachment.png' type='image/png' size='52106'/>
+            </attachments>
+        </test-case>
+        <test-case start='1558982314407' status='passed' stop='1558982330073'>
+            <name>Verify fields with invalid first and second names (more than 30 characters)</name>
+            <title>Verify fields with invalid first and second names (more than 30 characters)</title>
+            <labels/>
+            <parameters/>
+            <steps/>
+            <attachments>
+                <attachment title='Screenshot' source='1a8e19f2-29a2-43e5-ba69-0f4d8f43376d-attachment.png' type='image/png' size='66793'/>
+            </attachments>
+        </test-case>
+    </test-cases>
+</ns2:test-suite>
