@@ -1,4 +1,4 @@
-import { browser } from "protractor"
+import { browser, ExpectedConditions } from "protractor"
 
 const startPage = require('../page-objects/start-page')
 const creditPage = require('../page-objects/credit-page')
@@ -6,87 +6,89 @@ const registerPage = require('../page-objects/register-page')
 const searchPage = require('../page-objects/search-page')
 const companyName = "FinCompare GmbH"
 
-describe('User Cases', function () {
+describe('Registration user case', function () {
 
-	beforeEach(function () {
-		browser.get(startPage.url)
-	})
+    beforeEach(function () {
+        browser.get(startPage.url)
+    })
 
-	afterEach(function () {
-		browser.manage().deleteAllCookies()
-	})
+    it('verify', function () {
+        startPage.clickOnCreditBlock()
 
-	it('Verify the Registration User case', function () {
-		startPage.clickOnCreditBlock()
+        // Waits for a redirect
+        browser.wait(ExpectedConditions.urlIs(creditPage.url), 1000).then(() => {
+            expect(browser.getCurrentUrl()).toEqual(creditPage.url)
+        }).catch(() => {
+            fail('It taking too long to redirect')
+        })
 
-		// Waits for a redirect
-		browser.sleep(1000)
+        creditPage.fillAmountField("10000")
+        creditPage.clickOnPurposeMenu()
 
-		expect(browser.getCurrentUrl()).toEqual(creditPage.url)
+        // FIXME: Change the dropdown menu implementation from the input to the select
+        // then delete waitings until dropdown menus will be opened/closed
 
-		creditPage.fillAmountField("10000")
-		creditPage.clickOnPurposeMenu()
+        // Waits for an open of the purpose dropdown menu
+        browser.sleep(1000)
 
-		// FIXME: Change the dropdown menu implementation from the input to the select
-		// then delete waitings until dropdown menus will be opened/close
+        creditPage.chooseRandomValuePurposeMenu()
 
-		// Waits for an open of the porpose dropdown menu
-		browser.sleep(1000)
+        // Waits for a close of the purpose dropdown menu
+        browser.sleep(1000)
 
-		creditPage.chooseRandomValuePorposeMenu()
+        creditPage.clickOnTermMenu()
 
-		// Waits for a close of the porpose dropdown menu
-		browser.sleep(1000)
+        // Waits for an open of the purpose dropdown menu
+        browser.sleep(1000)
 
-		creditPage.clickOnTermMenu()
+        creditPage.chooseRandomValueTermMenu()
 
-		// Waits for an open of the porpose dropdown menu
-		browser.sleep(1000)
+        // Wait for a close of the term dropdown menu
+        browser.sleep(1000)
 
-		creditPage.chooseRandomValueTermMenu()
+        creditPage.clickOnSubmitButton()
 
-		// Wait for a close of the term dropdown menu
-		browser.sleep(1000)
+        // Waits for a verification
+        browser.wait(ExpectedConditions.urlIs(searchPage.url), 1000).then(() => {
+            expect(browser.getCurrentUrl()).toEqual(searchPage.url)
+        }).catch(() => {
+            fail('It taking too long to redirect')
+        })
 
-		creditPage.clickOnSubmitButton()
+        searchPage.fillSearchField(companyName)
+        searchPage.clickOnSubmitButton()
 
-		// Waits for a verification
-		browser.sleep(1000)
+        // Waits for a search result
+        browser.sleep(2000)
 
-		expect(browser.getCurrentUrl()).toEqual(searchPage.url)
+        searchPage.clickOnSearchResultCard()
 
-		searchPage.fillSearchField(companyName)
-		searchPage.clickOnSubmitButton()
+        // Waits for a redirect
+        browser.wait(ExpectedConditions.urlIs(registerPage.url), 1000).then(() => {
+            expect(browser.getCurrentUrl()).toEqual(registerPage.url)
+        }).catch(() => {
+            fail('It taking too long to redirect')
+        })
 
-		// Waits for a search result
-		browser.sleep(2000)
+        registerPage.clickOnRandomGenderRadioButton()
+        registerPage.fillFirstNameField("FirstName")
+        registerPage.fillLastNameField("LastName")
+        registerPage.fillEmailField("emailName@mail.com")
+        registerPage.clickOnBusinessRelationMenu()
 
-		searchPage.clickOnSearchResultCard()
+        // Waits for an open of the business relation dropdown menu
+        browser.sleep(1000)
 
-		// Waits for a redirect
-		browser.sleep(1000)
+        registerPage.chooseRandomValueBusinessRelationMenu()
 
-		expect(browser.getCurrentUrl()).toEqual(registerPage.url)
+        // Waits for a close of the business relation dropdown menu
+        browser.sleep(1000)
 
-		registerPage.clickOnRandomGenderRadioButton()
-		registerPage.fillFirstNameField("FirstName")
-		registerPage.fillLastNameField("LastName")
-		registerPage.fillEmailField("emailName@mail.com")
-		registerPage.clickOnBusinessRelationMenu()
+        registerPage.clickOnSubmitButton()
 
-		// Waits for an open of the business relation dropdown menu
-		browser.sleep(1000)
+        // Waits for a verification
+        browser.sleep(1000)
 
-		registerPage.chooseRandomValueBusinessRelationMenu()
-
-		// Waits for a close of the business relation dropdown menu
-		browser.sleep(1000)
-
-		registerPage.clickOnSubmitButton()
-
-		// Waits for a verification
-		browser.sleep(1000)
-
-		expect(registerPage.errorMessagesCount()).toEqual(1)
-	})
+        expect(registerPage.errorMessagesCount()).toEqual(1)
+    })
 })
