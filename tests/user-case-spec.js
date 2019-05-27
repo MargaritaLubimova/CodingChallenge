@@ -8,81 +8,81 @@ const companyName = "FinCompare GmbH"
 
 describe('Registration user case', function () {
 
-	beforeEach(function () {
-		browser.get(startPage.url)
-	})
+    beforeEach(function () {
+        browser.get(startPage.url)
+    })
 
-	it('verify', function () {
-		startPage.clickOnCreditBlock()
+    it('verify', function () {
+        startPage.clickOnCreditBlock()
 
-		// Waits for a redirect
-		browser.sleep(1000)
+        // Waits for a redirect
+        browser.sleep(1000)
 
-		expect(browser.getCurrentUrl()).toEqual(creditPage.url)
+        expect(browser.getCurrentUrl()).toEqual(creditPage.url)
 
-		creditPage.fillAmountField("10000")
-		creditPage.clickOnPurposeMenu()
+        creditPage.fillAmountField("10000")
+        creditPage.clickOnPurposeMenu()
 
-		// FIXME: Change the dropdown menu implementation from the input to the select
-		// then delete waitings until dropdown menus will be opened/close
+        // FIXME: Change the dropdown menu implementation from the input to the select
+        // then delete waitings until dropdown menus will be opened/close
 
-		// Waits for an open of the porpose dropdown menu
-		browser.sleep(1000)
+        // Waits for an open of the porpose dropdown menu
+        browser.sleep(1000)
 
-		creditPage.chooseRandomValuePorposeMenu()
+        creditPage.chooseRandomValuePorposeMenu()
 
-		// Waits for a close of the porpose dropdown menu
-		browser.sleep(1000)
+        // Waits for a close of the porpose dropdown menu
+        browser.sleep(1000)
 
-		creditPage.clickOnTermMenu()
+        creditPage.clickOnTermMenu()
 
-		// Waits for an open of the porpose dropdown menu
-		browser.sleep(1000)
+        // Waits for an open of the porpose dropdown menu
+        browser.sleep(1000)
 
-		creditPage.chooseRandomValueTermMenu()
+        creditPage.chooseRandomValueTermMenu()
 
-		// Wait for a close of the term dropdown menu
-		browser.sleep(1000)
+        // Wait for a close of the term dropdown menu
+        browser.sleep(1000)
 
-		creditPage.clickOnSubmitButton()
+        creditPage.clickOnSubmitButton()
 
-		// Waits for a verification
-		browser.sleep(1000)
+        // Waits for a verification
+        browser.sleep(1000)
 
-		expect(browser.getCurrentUrl()).toEqual(searchPage.url)
+        expect(browser.getCurrentUrl()).toEqual(searchPage.url)
 
-		searchPage.fillSearchField(companyName)
-		searchPage.clickOnSubmitButton()
+        searchPage.fillSearchField(companyName)
+        searchPage.clickOnSubmitButton()
 
-		// Waits for a search result
-		browser.sleep(2000)
+        // Waits for a search result
+        browser.sleep(2000)
 
-		searchPage.clickOnSearchResultCard()
+        searchPage.clickOnSearchResultCard()
 
-		// Waits for a redirect
-		browser.sleep(1000)
+        // Waits for a redirect
+        browser.sleep(1000)
 
-		expect(browser.getCurrentUrl()).toEqual(registerPage.url)
+        expect(browser.getCurrentUrl()).toEqual(registerPage.url)
 
-		registerPage.clickOnRandomGenderRadioButton()
-		registerPage.fillFirstNameField("FirstName")
-		registerPage.fillLastNameField("LastName")
-		registerPage.fillEmailField("emailName@mail.com")
-		registerPage.clickOnBusinessRelationMenu()
+        registerPage.clickOnRandomGenderRadioButton()
+        registerPage.fillFirstNameField("FirstName")
+        registerPage.fillLastNameField("LastName")
+        registerPage.fillEmailField("emailName@mail.com")
+        registerPage.clickOnBusinessRelationMenu()
 
-		// Waits for an open of the business relation dropdown menu
-		browser.sleep(1000)
+        // Waits for an open of the business relation dropdown menu
+        browser.sleep(1000)
 
-		registerPage.chooseRandomValueBusinessRelationMenu()
+        registerPage.chooseRandomValueBusinessRelationMenu()
 
-		// Waits for a close of the business relation dropdown menu
-		browser.sleep(1000)
+        // Waits for a close of the business relation dropdown menu
+        browser.sleep(1000)
 
-		registerPage.clickOnSubmitButton()
+        registerPage.clickOnSubmitButton()
 
-		// Waits for a verification
-		browser.sleep(1000)
+        // Waits for a verification
+        browser.sleep(1000)
 
-		expect(registerPage.errorMessagesCount()).toEqual(1)
-	})
+        expect(registerPage.errorMessagesCount()).toEqual(1)
+    })
 })
