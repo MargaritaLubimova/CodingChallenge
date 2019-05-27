@@ -27,7 +27,7 @@ describe('When the Register page is opened', function () {
     })
 
     it('Verify error messages for fields with empty parameters', function () {
-        // This steps if needed for opening the Register page 
+        // This steps are needed for opening the Register page 
         // for testing error messages, because the Register page has a bug
         helpers.openRegisterPage(searchPage)
 
@@ -42,7 +42,7 @@ describe('When the Register page is opened', function () {
     })
 
     it('Verify fields with invalid email', function () {
-        // This steps if needed for opening the Register page 
+        // This steps are needed for opening the Register page 
         // for testing error messages, because the Register page has a bug
         helpers.openRegisterPage(searchPage)
 
@@ -54,7 +54,7 @@ describe('When the Register page is opened', function () {
         registerPage.clickOnBusinessRelationMenu()
 
         // FIXME: Change the dropdown menu implementation from the input to the select
-        // then delete waitings until dropdown menus will be opened/close
+        // then delete waitings until dropdown menus will be opened/closed
 
         // Waits for an open of the business relation dropdown menu
         browser.sleep(1000)
@@ -70,7 +70,7 @@ describe('When the Register page is opened', function () {
     })
 
     it('Verify fields with invalid first and second names (more than 30 characters)', function () {
-        // This steps if needed for opening the Register page 
+        // This steps are needed for opening the Register page 
         // for testing error messages, because the Register page has a bug
         helpers.openRegisterPage(searchPage)
 
@@ -82,7 +82,7 @@ describe('When the Register page is opened', function () {
         registerPage.clickOnBusinessRelationMenu()
 
         // FIXME: Change the dropdown menu implementation from the input to the select
-        // then delete waitings until dropdown menus will be opened/close
+        // then delete waitings until dropdown menus will be opened/closed
 
         // Waits for an open of the business relation dropdown menu
         browser.sleep(1000)

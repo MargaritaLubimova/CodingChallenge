@@ -90,7 +90,7 @@ describe('When the Credit page is opened', function () {
         creditPage.clickOnPurposeMenu()
 
         // FIXME: Change the dropdown menu implementation from the input to the select
-        // then delete waitings until dropdown menus will be opened/close
+        // then delete waitings until dropdown menus will be opened/closed
 
         // Waits for an open the purpose dropdown menu
         browser.sleep(1000)
