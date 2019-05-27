@@ -1,4 +1,4 @@
-import { browser } from "protractor"
+import { browser, ExpectedConditions } from "protractor"
 
 const creditPage = require('../page-objects/credit-page')
 const searchPage = require('../page-objects/search-page')
@@ -113,8 +113,10 @@ describe('When the Credit page is opened', function () {
         creditPage.clickOnSubmitButton()
 
         // Waits for a verification
-        browser.sleep(1000)
-
-        expect(browser.getCurrentUrl()).toEqual(searchPage.url)
+        browser.wait(ExpectedConditions.urlIs(searchPage.url), 1000).then(() => {
+            expect(browser.getCurrentUrl()).toEqual(searchPage.url)
+        }).catch(() => {
+            fail('It taking too long to redirect')
+        })
     })
 })

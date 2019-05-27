@@ -1,4 +1,4 @@
-import { browser } from "protractor"
+import { browser, ExpectedConditions } from "protractor"
 
 const registerPage = require('../page-objects/register-page')
 const loginPage = require('../page-objects/login-page')
@@ -19,9 +19,11 @@ describe('When the Register page is opened', function () {
         registerPage.clickOnLoginLink()
 
         // Waits for a redirect
-        browser.sleep(1000)
-
-        expect(browser.getCurrentUrl()).toEqual(loginPage.url)
+        browser.wait(ExpectedConditions.urlIs(loginPage.url), 1000).then(() => {
+            expect(browser.getCurrentUrl()).toEqual(loginPage.url)
+        }).catch(() => {
+            fail('It taking too long to redirect')
+        })
     })
 
     it('Verify error messages for fields with empty parameters', function () {

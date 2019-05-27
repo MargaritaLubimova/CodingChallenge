@@ -1,4 +1,4 @@
-import { browser } from "protractor"
+import { browser, ExpectedConditions } from "protractor"
 
 const searchPage = require('../page-objects/search-page')
 const registerPage = require('../page-objects/register-page')
@@ -34,9 +34,11 @@ describe('When the Search page is opened', function () {
 
         searchPage.clickOnSearchResultCard()
 
-        // Waitsn for a redirect
-        browser.sleep(2000)
-
-        expect(browser.getCurrentUrl()).toEqual(registerPage.url)
+        // Waits for a redirect
+        browser.wait(ExpectedConditions.urlIs(registerPage.url), 2000).then(() => {
+            expect(browser.getCurrentUrl()).toEqual(registerPage.url)
+        }).catch(() => {
+            fail('It taking too long to redirect')
+        })
     })
 })

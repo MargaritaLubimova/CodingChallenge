@@ -1,4 +1,4 @@
-import { browser } from "protractor"
+import { browser, ExpectedConditions } from "protractor"
 
 const startPage = require('../page-objects/start-page')
 const creditPage = require('../page-objects/credit-page')
@@ -16,9 +16,11 @@ describe('Registration user case', function () {
         startPage.clickOnCreditBlock()
 
         // Waits for a redirect
-        browser.sleep(1000)
-
-        expect(browser.getCurrentUrl()).toEqual(creditPage.url)
+        browser.wait(ExpectedConditions.urlIs(creditPage.url), 1000).then(() => {
+            expect(browser.getCurrentUrl()).toEqual(creditPage.url)
+        }).catch(() => {
+            fail('It taking too long to redirect')
+        })
 
         creditPage.fillAmountField("10000")
         creditPage.clickOnPurposeMenu()
@@ -26,17 +28,17 @@ describe('Registration user case', function () {
         // FIXME: Change the dropdown menu implementation from the input to the select
         // then delete waitings until dropdown menus will be opened/close
 
-        // Waits for an open of the porpose dropdown menu
+        // Waits for an open of the purpose dropdown menu
         browser.sleep(1000)
 
-        creditPage.chooseRandomValuePorposeMenu()
+        creditPage.chooseRandomValuePurposeMenu()
 
-        // Waits for a close of the porpose dropdown menu
+        // Waits for a close of the purpose dropdown menu
         browser.sleep(1000)
 
         creditPage.clickOnTermMenu()
 
-        // Waits for an open of the porpose dropdown menu
+        // Waits for an open of the purpose dropdown menu
         browser.sleep(1000)
 
         creditPage.chooseRandomValueTermMenu()
@@ -47,9 +49,11 @@ describe('Registration user case', function () {
         creditPage.clickOnSubmitButton()
 
         // Waits for a verification
-        browser.sleep(1000)
-
-        expect(browser.getCurrentUrl()).toEqual(searchPage.url)
+        browser.wait(ExpectedConditions.urlIs(searchPage.url), 1000).then(() => {
+            expect(browser.getCurrentUrl()).toEqual(searchPage.url)
+        }).catch(() => {
+            fail('It taking too long to redirect')
+        })
 
         searchPage.fillSearchField(companyName)
         searchPage.clickOnSubmitButton()
@@ -60,9 +64,11 @@ describe('Registration user case', function () {
         searchPage.clickOnSearchResultCard()
 
         // Waits for a redirect
-        browser.sleep(1000)
-
-        expect(browser.getCurrentUrl()).toEqual(registerPage.url)
+        browser.wait(ExpectedConditions.urlIs(registerPage.url), 1000).then(() => {
+            expect(browser.getCurrentUrl()).toEqual(registerPage.url)
+        }).catch(() => {
+            fail('It taking too long to redirect')
+        })
 
         registerPage.clickOnRandomGenderRadioButton()
         registerPage.fillFirstNameField("FirstName")
