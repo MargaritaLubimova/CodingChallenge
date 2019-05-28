@@ -91,9 +91,12 @@ const RegisterPage = function () {
 
 	// #region Messages
 
+	/**
+     * @return {Number} count of visible error messages
+     */
 	this.errorMessagesCount = function () {
-		return this.errorMessages.count().then(length => {
-			return length
+		return this.errorMessages.count().then(count => {
+			return count
 		})
 	}
 
@@ -160,6 +163,7 @@ const RegisterPage = function () {
 	this.getTextErrorMesageUnderEmailField = function () {
 		return this.errorMessageUnderEmailField.getText()
 	}
+
 	/**
 	 * @return {Promise<String>} value for text of an error message under the phone field
 	 */
@@ -211,7 +215,6 @@ const RegisterPage = function () {
 	}
 
 	// #endregion
-
 }
 
 module.exports = new RegisterPage()
